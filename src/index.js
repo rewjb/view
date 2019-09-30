@@ -1,12 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+const React = require('react');
+const ReactDom = require('react-dom');
+const { hot } = require('react-hot-loader/root');
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const main = require('./WordRelay');
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Hot = hot(WordRelay); // hoc
+
+ReactDom.render(<Hot />, document.querySelector('#root'));
