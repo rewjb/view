@@ -8,7 +8,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   entry: {
-    app: './src/index',
+    app: './index',
   },
   module: {
     rules: [{
