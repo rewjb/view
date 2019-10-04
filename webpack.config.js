@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  name: 'word-relay-dev',
+  name: 'lotto-dev',
   mode: 'development',
   devtool: 'eval',
   resolve: {
@@ -17,20 +17,23 @@ module.exports = {
       options: {
         presets: [
           ['@babel/preset-env', {
-            targets: {browsers: ['last 2 chrome versions']},
+            targets: { browsers: ['last 2 chrome versions'] },
             debug: true,
           }],
           '@babel/preset-react',
         ],
-        plugins: ['react-hot-loader/babel'],
+        plugins: [
+          'react-hot-loader/babel',
+          '@babel/plugin-proposal-class-properties',
+        ],
       },
       exclude: path.join(__dirname, 'node_modules'),
     }],
   },
   plugins: [],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
-    publicPath: '/dist',
+    path: path.join(__dirname, 'src/dist/web'),
+    filename: 'app.js',
+    publicPath: '/src/dist/web',
   },
 };
